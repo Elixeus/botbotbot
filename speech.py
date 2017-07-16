@@ -11,6 +11,10 @@ import speech_recognition as sr
 r = sr.Recognizer()
 with sr.Microphone() as source:
     print('Please say your input')
-    audio = r.listen(source, phrase_time_limit=5)
+    audio = r.listen(source)
 
 print r.recognize_sphinx(audio)
+
+# from pocketsphinx import LiveSpeech
+# for phrase in LiveSpeech():
+#     print phrase

@@ -24,6 +24,8 @@ with open('darksouls_training.txt', 'r') as fhandler:
     str_input  = fhandler.read()
 sent_result = sent_tokenize(str_input)
 print 'There are {num} sentences in the training data.'.format(num=len(sent_result))
+for sentence in sent_result:
+    print sentence
 
 # 2 word_tokenize
 from nltk.tokenize import word_tokenize
