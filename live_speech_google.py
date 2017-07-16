@@ -1,5 +1,7 @@
+import os
 import speech_recognition as sr
 
+# API_KEY = os.getenv('GOOGLE_SPEECH_API_KEY')
 
 r = sr.Recognizer()
 with sr.Microphone(sample_rate=48000) as source:
