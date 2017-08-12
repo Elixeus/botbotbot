@@ -2,7 +2,7 @@ import os
 import speech_recognition as sr
 
 # API_KEY = os.getenv('GOOGLE_SPEECH_API_KEY')
-
+# CREDENTIALS ='{{"api_key":"{}"}}'.format(API_KEY)
 r = sr.Recognizer()
 with sr.Microphone(sample_rate=48000) as source:
     r.adjust_for_ambient_noise(source)
@@ -11,6 +11,8 @@ with sr.Microphone(sample_rate=48000) as source:
     
     try:
         text = r.recognize_google(audio)
+
+        # text = r.recognize_google_cloud(audio, credentials_json=CREDENTIALS)
         print "you said: {}".format(text)
     except sr.UnknownValueError:
         print 'Google Speech Recognition could not understand audio'
